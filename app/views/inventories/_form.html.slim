@@ -1,0 +1,20 @@
+= simple_form_for @inventory do |f|
+  - if @inventory.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@inventory.errors.count, "error")} prohibited this inventory from being saved:"
+      ul
+        - @inventory.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.input :name
+  .field
+    = f.association :division, collection: Division.order(:name).pluck(:name, :id), include_blank: 'Pilih bagian'
+  .field
+    = f.input :owner_name
+  .field
+    = f.input :no_identity
+  .field
+    = f.input :no_inventory
+  .actions 
+    = f.submit 'Save', class: 'waves-effect waves-light btn', style: 'float: right'

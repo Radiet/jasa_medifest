@@ -1,0 +1,22 @@
+div style="text-align: center"
+  = image_tag '/barcode.png'
+  br
+  = @inventory.no_inventory
+/ p#notice = notice
+
+/ p
+/   strong Name:
+/   = @inventory.name
+/ p
+/   strong Owner name:
+/   = @inventory.owner_name
+/ p
+/   strong No identity:
+/   = @inventory.no_identity
+/ p
+/   strong No inventory:
+/   = @inventory.no_inventory
+
+/ = link_to 'Edit', edit_inventory_path(@inventory)
+/ '  |
+/ = link_to 'Back', inventories_path

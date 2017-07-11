@@ -1,0 +1,5 @@
+- @inventories.each do |inventory|
+  div style="text-align: center; width: 200px; float: left"
+    = image_tag "/#{inventory.get_barcode}"
+    br
+    = inventory.no_inventory

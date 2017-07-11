@@ -1,0 +1,23 @@
+table
+  thead
+    tr
+      th Name
+      th bagian
+      th Owner name
+      th No identity
+      th No inventory
+      th
+      th
+      th
+
+  tbody
+    - inventories.each do |inventory|
+      tr
+        td = inventory.name
+        td = inventory.division_name
+        td = inventory.owner_name
+        td = inventory.no_identity
+        td = inventory.no_inventory
+        td = link_to 'Show barcode', inventory
+        td = link_to 'Edit', edit_inventory_path(inventory)
+        td = link_to 'Destroy', inventory, data: { confirm: 'Are you sure?' }, method: :delete

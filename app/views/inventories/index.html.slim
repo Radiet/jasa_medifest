@@ -1,0 +1,10 @@
+h1 Listing inventories
+
+= form_tag search_inventories_path, method: :get, remote: true
+  = text_field_tag :q, params[:q], placeholder: 'Search..', class: 'js-input-on-change', autofocus: true
+
+.js-inventories
+  = render 'inventory_table', inventories: @inventories
+
+= link_to 'Show Barcodes', barcodes_inventories_path, class: 'waves-effect waves-light btn', style: 'margin-bottom: 20px; margin-top: 20px'
+= link_to 'New Inventory', new_inventory_path, class: 'waves-effect waves-light red btn', style: 'margin-bottom: 20px; margin-top: 20px'
